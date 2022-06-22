@@ -15,6 +15,11 @@
 		CB95B6652859B9400081ABB5 /* SimpleDailyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95B6642859B9400081ABB5 /* SimpleDailyTests.swift */; };
 		CB95B66F2859B9400081ABB5 /* SimpleDailyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95B66E2859B9400081ABB5 /* SimpleDailyUITests.swift */; };
 		CB95B6712859B9400081ABB5 /* SimpleDailyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95B6702859B9400081ABB5 /* SimpleDailyUITestsLaunchTests.swift */; };
+		CB95B6C62862E3DE0081ABB5 /* SimpleDaily.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB95B6C42862E3DE0081ABB5 /* SimpleDaily.xcdatamodeld */; };
+		CB95B6CB2862F9710081ABB5 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95B6C72862F9710081ABB5 /* User+CoreDataClass.swift */; };
+		CB95B6CC2862F9710081ABB5 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95B6C82862F9710081ABB5 /* User+CoreDataProperties.swift */; };
+		CB95B6CD2862F9710081ABB5 /* Daily+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95B6C92862F9710081ABB5 /* Daily+CoreDataClass.swift */; };
+		CB95B6CE2862F9710081ABB5 /* Daily+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95B6CA2862F9710081ABB5 /* Daily+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		CB95B66A2859B9400081ABB5 /* SimpleDailyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleDailyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB95B66E2859B9400081ABB5 /* SimpleDailyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDailyUITests.swift; sourceTree = "<group>"; };
 		CB95B6702859B9400081ABB5 /* SimpleDailyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDailyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CB95B6C52862E3DE0081ABB5 /* SimpleDaily.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleDaily.xcdatamodel; sourceTree = "<group>"; };
+		CB95B6C72862F9710081ABB5 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CB95B6C82862F9710081ABB5 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CB95B6C92862F9710081ABB5 /* Daily+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Daily+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CB95B6CA2862F9710081ABB5 /* Daily+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Daily+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,7 @@
 		CB95B6412859B93D0081ABB5 = {
 			isa = PBXGroup;
 			children = (
+				CB95B6812862E2160081ABB5 /* CoreData */,
 				CB95B64C2859B93D0081ABB5 /* SimpleDaily */,
 				CB95B6632859B9400081ABB5 /* SimpleDailyTests */,
 				CB95B66D2859B9400081ABB5 /* SimpleDailyUITests */,
@@ -122,6 +133,18 @@
 				CB95B6702859B9400081ABB5 /* SimpleDailyUITestsLaunchTests.swift */,
 			);
 			path = SimpleDailyUITests;
+			sourceTree = "<group>";
+		};
+		CB95B6812862E2160081ABB5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CB95B6C72862F9710081ABB5 /* User+CoreDataClass.swift */,
+				CB95B6C82862F9710081ABB5 /* User+CoreDataProperties.swift */,
+				CB95B6C92862F9710081ABB5 /* Daily+CoreDataClass.swift */,
+				CB95B6CA2862F9710081ABB5 /* Daily+CoreDataProperties.swift */,
+				CB95B6C42862E3DE0081ABB5 /* SimpleDaily.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,8 +278,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB95B6522859B93D0081ABB5 /* ViewController.swift in Sources */,
+				CB95B6C62862E3DE0081ABB5 /* SimpleDaily.xcdatamodeld in Sources */,
+				CB95B6CC2862F9710081ABB5 /* User+CoreDataProperties.swift in Sources */,
 				CB95B64E2859B93D0081ABB5 /* AppDelegate.swift in Sources */,
+				CB95B6CD2862F9710081ABB5 /* Daily+CoreDataClass.swift in Sources */,
 				CB95B6502859B93D0081ABB5 /* SceneDelegate.swift in Sources */,
+				CB95B6CB2862F9710081ABB5 /* User+CoreDataClass.swift in Sources */,
+				CB95B6CE2862F9710081ABB5 /* Daily+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +616,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CB95B6C42862E3DE0081ABB5 /* SimpleDaily.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CB95B6C52862E3DE0081ABB5 /* SimpleDaily.xcdatamodel */,
+			);
+			currentVersion = CB95B6C52862E3DE0081ABB5 /* SimpleDaily.xcdatamodel */;
+			path = SimpleDaily.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CB95B6422859B93D0081ABB5 /* Project object */;
 }
