@@ -118,8 +118,6 @@
 		CB95B6412859B93D0081ABB5 = {
 			isa = PBXGroup;
 			children = (
-				CBCF768F2866F10500790BB5 /* Utils */,
-				CB95B6812862E2160081ABB5 /* Models */,
 				CB95B64C2859B93D0081ABB5 /* SimpleDaily */,
 				CB95B6632859B9400081ABB5 /* SimpleDailyTests */,
 				CB95B66D2859B9400081ABB5 /* SimpleDailyUITests */,
@@ -142,6 +140,8 @@
 		CB95B64C2859B93D0081ABB5 /* SimpleDaily */ = {
 			isa = PBXGroup;
 			children = (
+				CBCF768F2866F10500790BB5 /* Utils */,
+				CB95B6812862E2160081ABB5 /* Models */,
 				CB95B64D2859B93D0081ABB5 /* AppDelegate.swift */,
 				CB95B64F2859B93D0081ABB5 /* SceneDelegate.swift */,
 				CB95B6512859B93D0081ABB5 /* ListNoteViewController.swift */,
