@@ -18,8 +18,7 @@ extension User {
 
     @NSManaged public var name: String?
     @NSManaged public var password: String?
-    @NSManaged public var createDate: Date?
-    @NSManaged public var updateDate: Date?
+    @NSManaged public var lastUpdated: Date?
     @NSManaged public var oauthCode: String?
 
 }

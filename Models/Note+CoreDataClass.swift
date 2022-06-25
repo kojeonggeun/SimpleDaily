@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(Daily)
-public class Daily: NSManagedObject {
+@objc(Note)
+public class Note: NSManagedObject {
 
 }

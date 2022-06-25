@@ -10,20 +10,19 @@ import Foundation
 import CoreData
 
 
-extension Daily {
+extension Note {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Daily> {
-        return NSFetchRequest<Daily>(entityName: "Daily")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Note> {
+        return NSFetchRequest<Note>(entityName: "Note")
     }
 
     @NSManaged public var title: String?
     @NSManaged public var content: String?
     @NSManaged public var imageURL: String?
-    @NSManaged public var createDate: Date?
-    @NSManaged public var updateDate: Date?
+    @NSManaged public var lastUpdated: Date?
 
 }
 
-extension Daily : Identifiable {
+extension Note : Identifiable {
 
 }
