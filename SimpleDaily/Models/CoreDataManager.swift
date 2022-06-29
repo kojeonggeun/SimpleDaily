@@ -18,7 +18,7 @@ class CoreDataManager {
     var viewContext: NSManagedObjectContext {
         return persistentContainer!.viewContext
     }
-    
+
     func save(){
         if viewContext.hasChanges {
             do {
@@ -35,8 +35,8 @@ extension CoreDataManager {
     func createNote() -> Note{
         let note = Note(context: viewContext)
         
-        note.title = "테스트\(note.id)"
-        note.content = "테스트 내용 \(note.objectID)"
+        note.title = ""
+        note.content = ""
         note.imageURL = ""
         note.lastUpdated = Date()
         
@@ -44,7 +44,7 @@ extension CoreDataManager {
         
         return note
     }
-    
+
     func fetchNotes() -> [Note]{
         let request: NSFetchRequest<Note> = Note.fetchRequest()
         
@@ -52,6 +52,13 @@ extension CoreDataManager {
         request.sortDescriptors = [sortDescriptor]
         
         return (try? viewContext.fetch(request)) ?? []
+    }
+    
+    func updateNote(){
+        
+    }
+    
+    func deleteNote(){
         
     }
 }

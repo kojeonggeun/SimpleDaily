@@ -8,22 +8,18 @@
 import UIKit
 import CoreData
 import SnapKit
+import WidgetKit
 
 class ListNoteViewController: UIViewController {
+    
     private var notes: [Note] = []
-    
+    private let listNoteView = ListNoteView()
     private let testTableView: UITableView = UITableView()
-    private let createNewNoteButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
-        return button
-    }()
-    
+ 
 //    MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        createNewNoteButton.addTarget(self, action: #selector(createNewNoteClicked), for: .touchUpInside)
         
         setView()
         setConstraints()
@@ -35,31 +31,34 @@ class ListNoteViewController: UIViewController {
         testTableView.dataSource = self
         testTableView.delegate = self
         
+//        testTableView.register(ListNoteTableViewCell.self, forCellReuseIdentifier: ListNoteTableViewCell.identifier)
+        
         testTableView.register(UITableViewCell.self, forCellReuseIdentifier: "TableViewCell")
         
+        view.addSubview(listNoteView)
         view.addSubview(testTableView)
-        view.addSubview(createNewNoteButton)
+        
     }
     
     func setConstraints(){
-        testTableView.snp.makeConstraints { make in
+        listNoteView.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
         }
         
-        createNewNoteButton.snp.makeConstraints { make in
-            make.top.equalTo(testTableView.snp.bottom)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-30)
-            make.trailing.equalTo(view).offset(-30)
-            
+        testTableView.snp.makeConstraints { make in
+            make.top.equalTo(listNoteView.snp.bottom)
+            make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
+        
+    
     }
     
     @objc
-    func createNewNoteClicked(){
+    private func createNewNoteTouched(){
         createNote()
     }
     
-    func createNote() -> Note{
+    private func createNote() -> Note{
         let note = CoreDataManager.shared.createNote()
         
         notes.insert(note, at: 0)
@@ -68,9 +67,19 @@ class ListNoteViewController: UIViewController {
         return note
     }
     
-    func fetchNotesFromStorage(){
+    private func fetchNotesFromStorage(){
         notes = CoreDataManager.shared.fetchNotes()
     }
+    
+    private func goToEditNote(_ note: Note) {
+        
+        let controller = EditNoteViewController()
+        controller.modalPresentationStyle = .fullScreen
+          controller.note = note
+//          controller.delegate = self
+        self.navigationController?.pushViewController(controller, animated: true)
+          
+      }
 
 }
 
@@ -87,13 +96,16 @@ extension ListNoteViewController: UITableViewDataSource{
         
         let dateToString = date?.toString()
         cell.textLabel?.text = dateToString
-        
+
 //        cell.textLabel?.text = note.value(forKey: "createDate") as? String
-        
-        
         return cell
     }
 }
 
 extension ListNoteViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let note = notes[indexPath.row]
+        goToEditNote(note)
+    
+    }
 }

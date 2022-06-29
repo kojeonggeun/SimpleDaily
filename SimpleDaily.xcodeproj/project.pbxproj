@@ -22,9 +22,11 @@
 		CB95B6CC2862F9710081ABB5 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95B6C82862F9710081ABB5 /* User+CoreDataProperties.swift */; };
 		CB95B6CD2862F9710081ABB5 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95B6C92862F9710081ABB5 /* Note+CoreDataClass.swift */; };
 		CB95B6CE2862F9710081ABB5 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95B6CA2862F9710081ABB5 /* Note+CoreDataProperties.swift */; };
+		CBA54110286C379900806CB4 /* ListNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5410F286C379900806CB4 /* ListNoteView.swift */; };
 		CBCF768E2866E25E00790BB5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCF768D2866E25E00790BB5 /* CoreDataManager.swift */; };
 		CBCF76912866F11400790BB5 /* String+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCF76902866F11400790BB5 /* String+Extenstion.swift */; };
 		CBCF76932866F53600790BB5 /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCF76922866F53600790BB5 /* EditNoteViewController.swift */; };
+		CBCF76952866FB6D00790BB5 /* ListNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCF76942866FB6D00790BB5 /* ListNoteTableViewCell.swift */; };
 		D85DFBBFE07AD6E4F3F984F4 /* Pods_SimpleDailyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 767AAD354EDAFA2C3C67C2F1 /* Pods_SimpleDailyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CB00238F2869735A00A88A14 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3AB30B0B7CDF8F324406E75D /* Pods-SimpleDaily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleDaily.release.xcconfig"; path = "Target Support Files/Pods-SimpleDaily/Pods-SimpleDaily.release.xcconfig"; sourceTree = "<group>"; };
 		4FA147E68351385F10BA8213 /* Pods-SimpleDaily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleDaily.debug.xcconfig"; path = "Target Support Files/Pods-SimpleDaily/Pods-SimpleDaily.debug.xcconfig"; sourceTree = "<group>"; };
@@ -54,6 +69,8 @@
 		8186E1398C650B86BFBD28EF /* Pods-SimpleDaily-SimpleDailyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleDaily-SimpleDailyUITests.release.xcconfig"; path = "Target Support Files/Pods-SimpleDaily-SimpleDailyUITests/Pods-SimpleDaily-SimpleDailyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8BCF157474E781690CDB71D3 /* Pods-SimpleDailyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleDailyTests.release.xcconfig"; path = "Target Support Files/Pods-SimpleDailyTests/Pods-SimpleDailyTests.release.xcconfig"; sourceTree = "<group>"; };
 		AFAF9CA29A6EE5611089AF19 /* Pods_SimpleDaily_SimpleDailyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleDaily_SimpleDailyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB0023822869735900A88A14 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		CB0023842869735900A88A14 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		CB95B64A2859B93D0081ABB5 /* SimpleDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB95B64D2859B93D0081ABB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB95B64F2859B93D0081ABB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,9 +88,11 @@
 		CB95B6C82862F9710081ABB5 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CB95B6C92862F9710081ABB5 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CB95B6CA2862F9710081ABB5 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CBA5410F286C379900806CB4 /* ListNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNoteView.swift; sourceTree = "<group>"; };
 		CBCF768D2866E25E00790BB5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		CBCF76902866F11400790BB5 /* String+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extenstion.swift"; sourceTree = "<group>"; };
 		CBCF76922866F53600790BB5 /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
+		CBCF76942866FB6D00790BB5 /* ListNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNoteTableViewCell.swift; sourceTree = "<group>"; };
 		F5A87F40CDFDBD8AD5844B52 /* Pods_SimpleDaily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleDaily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -111,6 +130,8 @@
 				F5A87F40CDFDBD8AD5844B52 /* Pods_SimpleDaily.framework */,
 				AFAF9CA29A6EE5611089AF19 /* Pods_SimpleDaily_SimpleDailyUITests.framework */,
 				767AAD354EDAFA2C3C67C2F1 /* Pods_SimpleDailyTests.framework */,
+				CB0023822869735900A88A14 /* WidgetKit.framework */,
+				CB0023842869735900A88A14 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,12 +161,12 @@
 		CB95B64C2859B93D0081ABB5 /* SimpleDaily */ = {
 			isa = PBXGroup;
 			children = (
+				CBA5410E286C1C9300806CB4 /* Controller */,
+				CBCF76962866FB8100790BB5 /* View */,
 				CBCF768F2866F10500790BB5 /* Utils */,
 				CB95B6812862E2160081ABB5 /* Models */,
 				CB95B64D2859B93D0081ABB5 /* AppDelegate.swift */,
 				CB95B64F2859B93D0081ABB5 /* SceneDelegate.swift */,
-				CB95B6512859B93D0081ABB5 /* ListNoteViewController.swift */,
-				CBCF76922866F53600790BB5 /* EditNoteViewController.swift */,
 				CB95B6562859B93F0081ABB5 /* Assets.xcassets */,
 				CB95B6582859B93F0081ABB5 /* LaunchScreen.storyboard */,
 				CB95B65B2859B93F0081ABB5 /* Info.plist */,
@@ -183,12 +204,30 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		CBA5410E286C1C9300806CB4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CB95B6512859B93D0081ABB5 /* ListNoteViewController.swift */,
+				CBCF76922866F53600790BB5 /* EditNoteViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		CBCF768F2866F10500790BB5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				CBCF76902866F11400790BB5 /* String+Extenstion.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		CBCF76962866FB8100790BB5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CBCF76942866FB6D00790BB5 /* ListNoteTableViewCell.swift */,
+				CBA5410F286C379900806CB4 /* ListNoteView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E07944B278DC6FC14CA7828D /* Pods */ = {
@@ -216,6 +255,7 @@
 				CB95B6472859B93D0081ABB5 /* Frameworks */,
 				CB95B6482859B93D0081ABB5 /* Resources */,
 				92BE5EE228BDF8835D8E371A /* [CP] Embed Pods Frameworks */,
+				CB00238F2869735A00A88A14 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -451,8 +491,10 @@
 				CB95B6CD2862F9710081ABB5 /* Note+CoreDataClass.swift in Sources */,
 				CB95B6502859B93D0081ABB5 /* SceneDelegate.swift in Sources */,
 				CBCF768E2866E25E00790BB5 /* CoreDataManager.swift in Sources */,
+				CBA54110286C379900806CB4 /* ListNoteView.swift in Sources */,
 				CB95B6CB2862F9710081ABB5 /* User+CoreDataClass.swift in Sources */,
 				CB95B6CE2862F9710081ABB5 /* Note+CoreDataProperties.swift in Sources */,
+				CBCF76952866FB6D00790BB5 /* ListNoteTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
