@@ -54,11 +54,14 @@ extension CoreDataManager {
         return (try? viewContext.fetch(request)) ?? []
     }
     
-    func updateNote(){
-        
+    func updateNote(note: Note){
+        note.lastUpdated = Date()
+        save()
     }
     
-    func deleteNote(){
+    func deleteNote(note: Note){
+        viewContext.delete(note)
+        save()
         
     }
 }

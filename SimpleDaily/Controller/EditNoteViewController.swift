@@ -13,6 +13,7 @@ class EditNoteViewController: UIViewController {
     
     static let identifier = "EditNoteViewController"
     var note: Note!
+    weak var delegate: ListNotesDelegate!
     
     private let dateLabel: UILabel = {
         let label = UILabel()
@@ -43,9 +44,13 @@ class EditNoteViewController: UIViewController {
         view.addSubview(dateLabel)
         view.addSubview(contentTextView)
         
-        dateLabel.text = note.lastUpdated?.toString()
-        contentTextView.text = note.content
+        let cal = Calendar.current
+        let year = cal.component(.year, from: note.lastUpdated!)
+        let month = cal.component(.month, from: note.lastUpdated!)
+        let day = cal.component(.day, from: note.lastUpdated!)
         
+        dateLabel.text = "\(year)년 \(month)월 \(day)일"
+        contentTextView.text = note.content
     }
     
     func setConstraints(){
@@ -61,26 +66,26 @@ class EditNoteViewController: UIViewController {
     }
     
     private func updateNote(){
-        note.lastUpdated = Date()
-        CoreDataManager.shared.save()
+        
+        CoreDataManager.shared.updateNote(note: note)
+        delegate.refreshNotes()
         
     }
     private func deleteNote(){
-        print("awd")
-//        note.lastUpdated = Date()
-//        CoreDataManager.shared.save()
+        delegate.deleteNote(with: note.id)
+        CoreDataManager.shared.deleteNote(note: note)
         
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.contentTextView.resignFirstResponder()
     }
-    
 }
+
 extension EditNoteViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         note.content = contentTextView.text
-        if note.title?.isEmpty ?? true {
+        if note.content?.isEmpty ?? true {
             deleteNote()
         } else {
             updateNote()
